@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: release
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          echo ls -la ${{ github.workspace }}
+          cd ${{ github.workspace }}
+          cd ..
+          cd test-angular
+          npm run build
+      - name: Test
+        run: npm run test
