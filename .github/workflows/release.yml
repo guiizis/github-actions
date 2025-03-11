@@ -12,10 +12,6 @@ jobs:
     steps:
       - name: Build
         run: |
-          echo ls -la ${{ github.workspace }}
-          cd ${{ github.workspace }}
-          cd ..
-          cd test-angular
           npm run build
       - name: Test
         run: npm run test
