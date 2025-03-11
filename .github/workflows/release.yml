@@ -12,8 +12,16 @@ jobs:
     steps:
       - name: Checkout code path
         uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+
+      - name: Install Packages
+        run: npm install
+
       - name: Build
         run: |
           npm run build
+
       - name: Test
         run: npm run test
