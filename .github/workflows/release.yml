@@ -27,3 +27,22 @@ jobs:
 
       - name: Test
         run: npm run test
+  deploy:
+    steps:
+      - name: Checkout code path
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Packages
+        run: npm ci
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Deploy
+        run: echo "Deploying ..."
