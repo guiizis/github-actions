@@ -28,6 +28,7 @@ jobs:
       - name: Test
         run: npm run test
   deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code path
         uses: actions/checkout@v3
