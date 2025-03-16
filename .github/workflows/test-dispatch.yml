@@ -10,7 +10,7 @@ on:
       - main
       - dev/** # Match any branch starting with dev/
     paths-ignore:
-      - './github/workflows/**' # Ignore changes to this file
+      - '.github/workflows/*' # Ignore changes to this file
 jobs:
   deploy:
     runs-on: ubuntu-latest
