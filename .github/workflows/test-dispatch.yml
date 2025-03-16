@@ -2,8 +2,8 @@ name: Events Demo 1
 on:
   pull_request:
     types: [opened]
-      branches:
-        - main
+    branches:
+      - main
   workflow_dispatch:
 jobs:
   deploy:
