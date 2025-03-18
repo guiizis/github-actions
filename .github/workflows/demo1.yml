@@ -2,7 +2,17 @@ name: Events Demo 1
 on:
   pull_request:
     types: [opened]
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev/** # Match any branch starting with dev/
+    paths-ignore:
+      - '.github/workflows/*' # Ignore changes to this file
 jobs:
   deploy:
     runs-on: ubuntu-latest
