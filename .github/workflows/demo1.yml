@@ -54,6 +54,6 @@ jobs:
         with:
           name: my-artifact
       - name: Output fileName
-        run: echo "${{ needs.build.outputs.script-file }}"
+        run: echo "${{ needs.deploy.outputs.script-file }}"
       - name: Output contents of artifact
         run: ls -l
