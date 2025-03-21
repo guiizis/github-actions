@@ -52,6 +52,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: my-artifact  
+          name: my-artifact
+      - name: Output fileName
+        run: echo "${{ needs.build.outputs.script-file }}"
       - name: Output contents of artifact
         run: ls -l
