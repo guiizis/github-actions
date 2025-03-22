@@ -75,3 +75,16 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+  report:
+    if: failure()
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get test report
+        uses: actions/download-artifact@v3
+        with:
+          name: test-report
+      - name: Report
+        run: |
+          echo "something went wrong"
+          echo "${{ github }}"
