@@ -87,5 +87,5 @@ jobs:
       - name: Report
         run: |
           echo "something went wrong"
-          echo "ls"
+          ls
           echo "${{ github }}"
