@@ -81,10 +81,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get test report
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: test-report
       - name: Report
         run: |
           echo "something went wrong"
+          echo "ls"
           echo "${{ github }}"
