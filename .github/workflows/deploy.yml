@@ -4,8 +4,15 @@ on:
     branches:
       - main
       - dev
+
+env:
+  MONGO_DB_NAME: gha-demo
 jobs:
   test:
+    env:
+      MONGODB_CLUSTER_ADDRESS: 
+      MONGODB_USERNAME:
+      MONGODB_PASSWORD:
     environment: testing
     runs-on: ubuntu-latest
     steps:
