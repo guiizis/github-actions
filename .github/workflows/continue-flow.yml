@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Continue Flow
 on:
   push:
     branches:
