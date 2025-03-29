@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: Publish S3
+        uses: ./.github/actions/deploy-s3-js
       - name: Cache dependencies
         id: cache-deps
         uses: ./.github/actions/cache-deps
